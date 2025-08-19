@@ -109,3 +109,6 @@ class AsinNotFound(PaapiError):
 class InvalidArgument(PaapiError):
     """Raised when arguments are not correct."""
 
+
+class RequestFailed(PaapiError):
+    """"Raised when client request failed."""

@@ -4,12 +4,18 @@ Amazon Product Advertising API 5.0 rewrited for Python.
 
 ## Features
 
+- Multiple platforms supports and includes **asyncio**
+  - support `requests` as sync mode
+  - support `httpx` as async/sync mode
+  - support `tornado` as async mode
+  - **very easy to extend** to another platform
+- Type hints for every interface 
+- Support **ALL data models** for PAAPI to help you coding.
 - Object oriented interface for simple usage.
 - Get information about a product through its ASIN or URL.
 - Get item variations or search for products on Amazon.
 - Get browse nodes information.
 - Get multiple results at once without the 10 items limitation from Amazon.
-- Type hints and **data modeling** to help you coding.
 - Support for all available countries.
 
 ## Installation
