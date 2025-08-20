@@ -26,17 +26,28 @@ You can install or upgrade the module with:
 
 ## Usage guide
 
-**Basic usage**
-
 ```python
 
+# example code use requests as transport in sync mode
+# please install requests dependencies first
 from amazon_paapi_python_sdk import PaapiClient
+from amazon_paapi_python_sdk import UseRequestsTransport
 
-client = PaapiClient(ACCESS_KEY, SECRET_KEY, PARTNER_TAG)
+client = PaapiClient(ACCESS_KEY, SECRET_KEY, PARTNER_TAG, transport=UseRequestsTransport())
 items = client.get_items(['B01N5IB20Q', 'B01F9G43WU'])
 for items in items:
     print(item.images.primary.large.url) # primary image url
     print(item.offers.listings[0].price.amount) # current price
 
-```
+# example code use httpx as transport in async mode
+# please install httpx dependencies first
+from amazon_paapi_python_sdk import AsyncPaapiClient
+from amazon_paapi_python_sdk import UseHttpxTransport
 
+client = AsyncPaapiClient(ACCESS_KEY, SECRET_KEY, PARTNER_TAG, transport=UseHttpxTransport())
+items = await client.get_items(['B01N5IB20Q', 'B01F9G43WU'])
+for items in items:
+    print(item.images.primary.large.url) # primary image url
+    print(item.offers.listings[0].price.amount) # current price
+
+```
