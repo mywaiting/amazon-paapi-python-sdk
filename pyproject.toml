@@ -1,0 +1,49 @@
+[project]
+name = "amazon-paapi-python-sdk"
+authors = [
+    { name="Heng<mywaiting>", email="hi@mywaiting.com" }
+]
+description = "Amazon Product Advertising API 5.0 rewrited for Python"
+readme = "README.md"
+requires-python = ">= 3.8"
+classifiers = [
+    "Programming Language :: Python",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+dynamic = ["version"] # for PEP 621, dynamic version
+
+[project.urls]
+Homepage = "https://github.com/mywaiting/amazon-paapi-python-sdk"
+Issues = "https://github.com/mywaiting/amazon-paapi-python-sdk/issues"
+
+[project.optional-dependencies]
+requests = [
+    "requests"
+]
+httpx = [
+    "httpx"
+]
+tornado = [
+    "tornado"
+]
+docs = [
+    "sphinx",
+    "myst-parser",
+]
+
+
+[build-system]
+requires = ["setuptools>= 64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = [
+    "amazon_paapi_python_sdk*", # see https://stackoverflow.com/a/75881304
+    "tests*",
+    "docs*",
+]
+
+[tool.setuptools_scm]
+version_file = "amazon_paapi_python_sdk/__version__.py"
