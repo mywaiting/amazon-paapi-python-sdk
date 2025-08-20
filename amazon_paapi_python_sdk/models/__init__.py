@@ -1,7 +1,9 @@
 import dataclasses
 import typing
 
-def from_dict(model_cls, data: dict, *, strict: bool = False, forbid_extra: bool = False):
+T = typing.TypeVar("T")
+
+def from_dict(model_cls: typing.Type[T], data: dict, *, strict: bool = False, forbid_extra: bool = False) -> T:
     """Universal from_dict:
     Initialize a dataclass instance from an external dict, using field metadata['key'] for mapping.
     
@@ -52,7 +54,7 @@ def from_dict(model_cls, data: dict, *, strict: bool = False, forbid_extra: bool
     return model_cls(**init_kwargs)
 
 
-def to_dict(model_ins):
+def to_dict(model_ins: T) -> typing.Dict[str, typing.Any]:
     """Universal to_dict:
     Convert a dataclass instance into dict, using field metadata['key'] for mapping.
     """

@@ -6,14 +6,14 @@ import json
 class AWSV4Auth:
     def __init__(
         self,
-        access_key,
-        secret_key,
-        host,
-        region,
-        service,
-        method_name,
-        timestamp,
-        headers={},
+        access_key: str,
+        secret_key: str,
+        host: str,
+        region: str,
+        service: str,
+        method_name: str,
+        timestamp: int,
+        headers: dict[str, str] ={},
         path="",
         payload="",
     ):
